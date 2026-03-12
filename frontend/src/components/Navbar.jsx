@@ -1,11 +1,13 @@
 import { SearchIcon, PanelLeft, MoonIcon, SunIcon } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom"; // <- import useNavigate
 import { toggleTheme } from "../features/themeSlice";
 import { assets } from "../assets/assets";
 
 const Navbar = ({ setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
+  const navigate = useNavigate(); // <- initialize navigate
 
   return (
     <div className="w-full bg-white dark:bg-zinc-900 border-b border-gray-200 dark:border-zinc-800 px-6 xl:px-16 py-3 flex-shrink-0">
@@ -45,6 +47,14 @@ const Navbar = ({ setIsSidebarOpen }) => {
             alt="User Avatar"
             className="size-7 rounded-full"
           />
+
+          {/* Login Button */}
+          <button
+            onClick={() => navigate("/login")}
+            className="ml-2 px-3 py-1 bg-blue-500 text-white rounded-md text-sm hover:bg-blue-600 transition"
+          >
+            Login
+          </button>
         </div>
       </div>
     </div>
