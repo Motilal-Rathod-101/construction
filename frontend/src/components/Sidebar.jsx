@@ -7,6 +7,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const menuItems = [
     { name: "Dashboard", href: "/", icon: LayoutDashboardIcon },
     { name: "Projects", href: "/projects", icon: FolderOpenIcon },
+    { name: "DPR Form", href: "/dpr/p1", icon: SettingsIcon },
   ];
 
   const sidebarRef = useRef(null);

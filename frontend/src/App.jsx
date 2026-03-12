@@ -18,6 +18,7 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path="projects" element={<Projects />} />
           <Route path="dpr/:id" element={<DPRForm />} />
+
         </Route>
       </Routes>
     </>
